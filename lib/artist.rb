@@ -1,5 +1,5 @@
 class Artist
-  attr_accessor :name, :songs
+  attr_accessor :name
   @@all = []
 
   def initialize(name)
@@ -18,7 +18,7 @@ class Artist
   end
 
   def songs
-    @songs
+    Song.all.select {|song| song.artist == self}
   end
 
 
